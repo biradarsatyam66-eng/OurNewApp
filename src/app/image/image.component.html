@@ -1,0 +1,54 @@
+<h2 class="text-center text-danger"><strong class="border-bottom border-danger">IMAGES</strong></h2>
+
+
+<div class="container">
+    <div class="row">
+        <div
+        *ngFor="let i of images"
+         class="col-md-3 mb-3">
+            <div class="card h-100">
+                <div class="card-header"><h6 class="text-primary">{{i.pname}}</h6>
+                <span class="bg-warning p-1 rounded">{{i.rating}}</span>
+                </div>
+                <div class="card-body">
+                    <img [src]="i.img" [alt]="i.pname" class="w-100">
+
+                    <p class="mt-3"><strong class="text-primary">Descriptuon :-</strong>{{i.description}}</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <button class="btn btn-primary btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<hr class="bg-primary">
+
+<h2 class="text-center text-danger"><strong class="border-bottom border-danger">BY ANGULAR MATERIAL</strong></h2>
+
+
+<div class="container">
+    <div class="row mt-4">
+        <div
+        *ngFor="let i of images"
+        class="col-md-6 mb-4">
+            <mat-card class="example-card">
+                <mat-card-title-group>
+                    <mat-card-title color="primary">{{i.pname}}</mat-card-title>
+                    <mat-card-subtitle>{{i.rating}}</mat-card-subtitle>
+                    <img mat-card-xl-image [src]="i.img">
+                </mat-card-title-group>
+                <mat-card-content>
+                    {{i.description}}
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button color="primary">Edit</button>
+                    <button mat-button color="warn">Delete</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
