@@ -1,0 +1,60 @@
+<!-- <app-product></app-product> -->
+
+<h3 class="text-center text-primary mt-2 mb-3">
+  {{title}} 
+</h3>
+
+<hr class="bg-primary">
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <ul class="list-group">
+        <li 
+        
+        *ngFor="let s of skilles"
+        class="list-group-item">
+          {{s}}
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+
+<hr class="bg-primary">
+
+<h2 class="text-center text-danger"><strong class="border-bottom border-danger">POSTS</strong></h2>
+
+  <div class="row mt-3">
+    <div
+    *ngFor="let p of posts"
+    class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-header">
+          <h4
+          style='text-overflow: ellipsis; white-space: nowrap; overflow: hidden;'
+          >
+            {{p.title}}
+          </h4>
+        </div>
+        <div class="card-body">
+          {{p.body}}
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <button class="btn btn-primary btn-sm">Edit</button>
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="bg-primary">
+
+<app-product></app-product>
+
+<hr class="bg-primary">
+
+<app-comment></app-comment>

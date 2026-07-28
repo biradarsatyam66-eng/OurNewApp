@@ -1,0 +1,28 @@
+<h2 class="text-center text-danger"><strong class="border-bottom border-danger">PRODUCTS</strong></h2>
+
+<div class="container">
+  <div class="row mt-3">
+    <div
+    *ngFor="let p of products"
+    class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+            <img style="height: 300px; object-fit: cover;" src={{p.image}} alt={{p.title}} class="card-img-top">
+
+            <h3 class="text-primary">{{p.title}}</h3>
+
+            <p><strong>Brand :</strong> {{p.brand}}</p>
+
+            <p><strong>Category :</strong> {{p.category}}</p>
+
+            <p class="text-success"><strong>₹ {{p.price}}</strong></p>
+
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <button class="btn btn-outline-primary btn-sm">Edit</button>
+          <button class="btn btn-outline-danger btn-sm">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
