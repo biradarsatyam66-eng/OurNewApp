@@ -9,6 +9,7 @@ import { ImageComponent } from './image/image.component'
 import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import{EventComponent} from './Event/event.component'
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {MatIconModule} from '@angular/material/icon';
     AppComponent,
     ProductComponent,
     CommentComponent,
-    ImageComponent
+    ImageComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
