@@ -1,0 +1,112 @@
+<h2 class="text-center mb-3 text-danger"><strong class="border-bottom border-danger">TODO TASK</strong></h2>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="todo">Todo Item :-</label>
+                <input
+                #todovalue
+                type="text" class="form-control">
+            </div>
+            <button
+            (click)="ontodoAdd(todovalue)"
+            mat-raised-button color="primary" class="btn-block">ADD TODO</button>
+        </div>
+        <div class="col-md-6">
+            <strong class="bg-primary p-1 rounded text-white">TODO LIST:-</strong>
+            <ul class="list-group mt-2">
+                <li
+                *ngFor="let t of todoArr"
+                class="list-group-item">{{t.todoitem}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="bg-primary">
+
+    <div class="row mt-2">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input
+                #todo
+                type="text" class="form-control">
+            </div>
+            <button
+            (click)="ontodoadd(todo)"
+            mat-raised-button color="primary" class="btn-block">ADD TODO</button>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center">
+                        <th>Sr.No</th>
+                        <th>TODO ITEM</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                    *ngFor="let t of todoarr,index as i"
+                    class="text-center">
+                        <td>{{i+1}}</td>
+                        <td>{{t.todoitem}}</td>
+                        <td><button class="bg-primary" matMiniFab><mat-icon>edit</mat-icon></button></td>
+                        <td><button class="bg-danger" matMiniFab><mat-icon>delete</mat-icon></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <hr class="bg-primary">
+
+    <div class="row">
+        <div class="col-md-6">
+            <input
+            #Add
+            type="text" class="form-control">
+            <button
+            (click)="ontodo(Add)"
+            mat-raised-button color="primary" class="btn-block mt-2">ADD TODO</button>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered table-striped table-dark">
+                <thead class="text-center">
+                    <tr>
+                        <th>SR.NO</th>
+                        <th>TODO ITEM</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let t of todoArr,let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{t.todoitem}}</td>
+                        <td><button class="bg-primary"><mat-icon>colorize</mat-icon></button></td>
+                        <td><button class="bg-danger"><mat-icon>delete_forever</mat-icon></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr class="bg-primary">
+
+    
+        <button
+        (click)="onProductadd()" 
+        mat-raised-button color="primary">ADD</button>
+
+        <button
+        [disabled]="productcount <= 0 "
+        (click)="onProductremove()"
+        mat-raised-button color="warn" class="ml-4">DELETE</button>
+
+        <p class="bg-warning p-1 rounded mt-2">{{productmsg}}</p>
+
+</div>

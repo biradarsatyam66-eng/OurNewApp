@@ -9,7 +9,8 @@ import { ImageComponent } from './image/image.component'
 import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import{EventComponent} from './Event/event.component'
+import{EventComponent} from './Event/event.component';
+import { TodoComponent } from './todo/todo.component'
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import{EventComponent} from './Event/event.component'
     ProductComponent,
     CommentComponent,
     ImageComponent,
-    EventComponent
+    EventComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
