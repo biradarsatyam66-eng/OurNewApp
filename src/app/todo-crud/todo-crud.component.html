@@ -1,0 +1,45 @@
+<h2 class="text-center mb-5 text-danger"><strong class="border-bottom border-danger">TODO CRUD</strong></h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <input
+            #todo
+            type="text" class="form-control mb-3" placeholder="TODO">
+            <button
+            *ngIf="!isinEditMode"
+            (click)="onAddTodo(todo)"
+            mat-raised-button color="primary" class="btn-block">ADD TODO</button>
+
+            <button 
+            (click)="onupdateTodo()"
+            *ngIf="isinEditMode"
+            mat-raised-button color="primary" class="btn-block">UPDATE TODO</button>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered table-striped">
+                <thead class="text-center">
+                    <tr>
+                        <th>SR.NO</th>
+                        <th>TODO ITEM</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let t of todoArr,let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{t.todoitem}}</td>
+                        <td><button 
+                            (click)="onEdit(t)"
+                            class="bg-primary"><mat-icon>colorize</mat-icon></button></td>
+                        <td><button 
+                            (click)="onDelete(t.todoid)"
+                            class="bg-danger"><mat-icon>delete_forever</mat-icon></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

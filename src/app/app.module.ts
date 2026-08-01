@@ -10,7 +10,9 @@ import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import{EventComponent} from './Event/event.component';
-import { TodoComponent } from './todo/todo.component'
+import { TodoComponent } from './todo/todo.component';
+import { TodoCRUDComponent } from './todo-crud/todo-crud.component';
+
 
 
 @NgModule({
@@ -20,14 +22,16 @@ import { TodoComponent } from './todo/todo.component'
     CommentComponent,
     ImageComponent,
     EventComponent,
-    TodoComponent
+    TodoComponent,
+    TodoCRUDComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
