@@ -1,6 +1,6 @@
 <h2 class="text-center mb-5 text-danger"><strong class="border-bottom border-danger">TODO CRUD</strong></h2>
 
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-6">
             <input
@@ -41,5 +41,46 @@
             </table>
         </div>
     </div>
-</div>
+</div> -->
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <label for="todo" class="font-weight-bold">TODO INPUT :-</label>
+            <input 
+            #todo
+            type="text" class="form-control mb-3">
+            <button *ngIf="!isinEditMode"
+            (click)="onAddTodo(todo)"
+            mat-raised-button class="btn-block" color="primary">ADD TODO</button>
+
+            <button *ngIf="isinEditMode"
+            (click)="onupdate()"
+            mat-raised-button class="btn-block" color="warn">Update TODO</button>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered table-dark text-center">
+                <thead class="bg-warning text-danger">
+                    <tr>
+                        <th>SR</th>
+                        <th>TODO ITEM</th>
+                        <th>EDIT</th>
+                        <th>REMOVE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let t of todoArr,index as i">
+                        <td>{{i + 1}}</td>
+                        <td>{{t.todoitem}}</td>
+                        <td><button
+                            (click)="onEdit(t)"
+                            class="bg-primary"><mat-icon>colorize</mat-icon></button></td>
+                        <td><button 
+                            (click)="onremove(t.todoid)"
+                            class="bg-danger"><mat-icon>delete_forever</mat-icon></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
