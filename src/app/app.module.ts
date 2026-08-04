@@ -12,6 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import{EventComponent} from './Event/event.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodoCRUDComponent } from './todo-crud/todo-crud.component';
+import { StdCRUDComponent } from './std-crud/std-crud.component';
 
 
 
@@ -23,7 +24,8 @@ import { TodoCRUDComponent } from './todo-crud/todo-crud.component';
     ImageComponent,
     EventComponent,
     TodoComponent,
-    TodoCRUDComponent
+    TodoCRUDComponent,
+    StdCRUDComponent
   ],
   imports: [
     BrowserModule,
