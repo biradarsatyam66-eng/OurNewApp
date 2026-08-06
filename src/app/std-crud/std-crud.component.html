@@ -3,7 +3,48 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3"></div>
+        <div class="col-md-6 offset-md-3">
+            <h1 *ngIf="!isinEditMode" class="text-center border-bottom border-danger">ADD STUDENT</h1>
+            <h1 *ngIf="isinEditMode" class="text-center border-bottom border-danger">UPDATE STUDENT</h1>
+
+            <div class="form-group">
+                <label for="fname">Fname</label>
+                <input 
+                #fname
+                type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="lname">Lname</label>
+                <input 
+                #lname
+                type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                #email
+                type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact</label>
+                <input 
+                #contact
+                type="number" class="form-control">
+            </div>
+            
+            <div>
+                <button 
+                *ngIf="!isinEditMode"
+                (click)="onAdd()"
+                mat-raised-button class="btn-block" color="primary">ADD TODO</button>
+            </div>
+
+            <div>
+                <button
+                *ngIf="isinEditMode"
+                mat-raised-button class="btn-block" color="warn">Update TODO</button>
+            </div>
+        </div>
     </div>
     <div class="row mt-3">
         <div class="col-md-12">
