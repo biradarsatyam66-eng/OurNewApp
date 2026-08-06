@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-
 interface Istd {
   fname : string,
   lname : string,
@@ -21,7 +20,9 @@ export class StdCRUDComponent implements OnInit {
   @ViewChild('email') email !: ElementRef
   @ViewChild('contact') contact !: ElementRef
 
-  isinEditMode : Boolean = false
+  editStd !: Istd
+
+  isinEditMode : boolean = false
   constructor() { }
 
   ngOnInit(): void {
@@ -39,7 +40,7 @@ export class StdCRUDComponent implements OnInit {
     lname : "Biradar",
     email : "shub66@gmail.com",
     contact : 7890678901,
-    stdId : '234',
+    stdId : '239',
   },
   {
   fname: "Rahul",
@@ -72,7 +73,7 @@ export class StdCRUDComponent implements OnInit {
 ]
 
   onAdd(){
-    let new_obj : Istd ={
+    let new_obj:Istd  ={
       fname : this.fname.nativeElement.value,
       lname : this.lname.nativeElement.value,
       email : this.email.nativeElement.value,
@@ -84,6 +85,42 @@ export class StdCRUDComponent implements OnInit {
      this.email.nativeElement.value = ''
      this.contact.nativeElement.value = ''
      this.StdArr.unshift(new_obj)
+  }
+
+  onEdit(s : Istd){
+    this.editStd = s
+    this.isinEditMode = true
+    this.fname.nativeElement.value = s.fname
+    this.contact.nativeElement.value = s.contact
+    this.email.nativeElement.value = s.email
+    this.lname.nativeElement.value = s.lname
+  }
+
+  OnUpdate(){
+    let update_id = this.editStd.stdId
+
+    let update_obj : Istd  = {
+      fname : this.fname.nativeElement.value,
+      contact : +this.contact.nativeElement.value,
+      email : this.email.nativeElement.value,
+      lname : this.lname.nativeElement.value,
+      stdId: update_id
+    }
+
+    this.fname.nativeElement.value = ''
+    this.lname.nativeElement.value = ''
+    this.email.nativeElement.value = ''
+    this.contact.nativeElement.value = ''
+
+
+    let getindex = this.StdArr.findIndex(i => i.stdId === update_id)
+    this.StdArr[getindex] = update_obj
+    this.isinEditMode = false
+  }
+
+  onRemove(stdId : string){
+    let getindex = this.StdArr.findIndex(i => i.stdId === stdId)
+    this.StdArr.splice(getindex,1)
   }
 
 }

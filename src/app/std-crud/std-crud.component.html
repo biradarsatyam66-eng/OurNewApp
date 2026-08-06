@@ -42,6 +42,7 @@
             <div>
                 <button
                 *ngIf="isinEditMode"
+                (click)="OnUpdate()"
                 mat-raised-button class="btn-block" color="warn">Update TODO</button>
             </div>
         </div>
@@ -66,8 +67,12 @@
                             <td>{{s.fname}} {{s.lname}}</td>
                             <td>{{s.email}}</td>
                             <td>{{s.contact}}</td>
-                            <td><button class="bg-primary"><mat-icon>colorize</mat-icon></button></td>
-                            <td><button class="bg-danger"><mat-icon>delete_forever</mat-icon></button></td>
+                            <td><button 
+                                (click)="onEdit(s)"
+                                class="bg-primary"><mat-icon>colorize</mat-icon></button></td>
+                            <td><button 
+                                (click)="onRemove(s.stdId)"
+                                class="bg-danger"><mat-icon>delete_forever</mat-icon></button></td>
                         </tr>
                     </tbody>
                 </table>
