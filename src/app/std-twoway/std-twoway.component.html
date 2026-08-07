@@ -1,0 +1,79 @@
+<h2 class="text-center mb-5 text-danger"><strong class="border-bottom border-danger">STD CRUD (TWO-WAY)</strong></h2>
+
+<div class="container">
+    <h1 *ngIf="!isinEditMode" class="text-center text-primary">ADD STD</h1>
+    <h1 *ngIf="isinEditMode" class="text-center text-warning">UPDATE STD</h1>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input 
+                [(ngModel)]="fname"
+                type="text" class="form-control" placeholder="FIRST NAME :-">
+            </div>    
+
+                <div class="form-group">
+                    <input 
+                    [(ngModel)]="lname"
+                    type="text" class="form-control" placeholder="LAST NAME :-">
+                </div>
+                
+                <div class="form-group">
+                    <input 
+                    [(ngModel)]="email"
+                    type="text" class="form-control" placeholder="EMAIL :-">
+                </div>
+
+                <div class="form-group">
+                    <input 
+                    [(ngModel)]="contact"
+                    type="number" class="form-control" placeholder="CONTACT :-">
+                </div>
+
+                <div>
+                    <button 
+                    *ngIf="!isinEditMode"
+                    (click)="onAdd()"
+                    mat-raised-button color="primary" class="btn-block mt-2">ADD STD</button>
+                </div>
+
+                <div>
+                    <button 
+                    *ngIf="isinEditMode"
+                    (click)='onupdate()'
+                    mat-raised-button color="accent" class="btn-block mt-2">UPDATE STD</button>
+                </div>
+        </div>
+        <div class="col-md-6">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="text-center">
+                        <tr>
+                            <th>SR.NO</th>
+                            <th>FULL NAME</th>
+                            <th>EMAIL</th>
+                            <th>CONTACT</th>
+                            <th>EDIT</th>
+                            <th>DELETE</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr *ngFor="let s of StdArr,index as i">
+                            <td>{{i + 1}}</td>
+                            <td>{{s.fname}} {{s.lname}}</td>
+                            <td>{{s.email}}</td>
+                            <td>{{s.contact}}</td>
+                            <td><button 
+                                (click)="onedit(s)"
+                                class="bg-primary"><mat-icon>colorize</mat-icon></button></td>
+                            <td><button 
+                                (click)="ondelete(s.stdId)"
+                                class="bg-danger"><mat-icon>delete_forever</mat-icon></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

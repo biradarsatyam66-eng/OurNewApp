@@ -15,6 +15,8 @@ import { TodoCRUDComponent } from './todo-crud/todo-crud.component';
 import { StdCRUDComponent } from './std-crud/std-crud.component';
 import { TwowaytodoComponent } from './twowaytodo/twowaytodo.component';
 import { FormsModule } from '@angular/forms';
+import { StdTwowayComponent } from './std-twoway/std-twoway.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -28,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     TodoComponent,
     TodoCRUDComponent,
     StdCRUDComponent,
-    TwowaytodoComponent
+    TwowaytodoComponent,
+    StdTwowayComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
     
   ],
   providers: [],
