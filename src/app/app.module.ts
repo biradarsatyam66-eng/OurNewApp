@@ -13,6 +13,8 @@ import{EventComponent} from './Event/event.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodoCRUDComponent } from './todo-crud/todo-crud.component';
 import { StdCRUDComponent } from './std-crud/std-crud.component';
+import { TwowaytodoComponent } from './twowaytodo/twowaytodo.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +27,8 @@ import { StdCRUDComponent } from './std-crud/std-crud.component';
     EventComponent,
     TodoComponent,
     TodoCRUDComponent,
-    StdCRUDComponent
+    StdCRUDComponent,
+    TwowaytodoComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { StdCRUDComponent } from './std-crud/std-crud.component';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    FormsModule
     
   ],
   providers: [],
