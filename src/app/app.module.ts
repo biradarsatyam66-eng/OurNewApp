@@ -17,6 +17,7 @@ import { TwowaytodoComponent } from './twowaytodo/twowaytodo.component';
 import { FormsModule } from '@angular/forms';
 import { StdTwowayComponent } from './std-twoway/std-twoway.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { TabngSwitchComponent } from './tabng-switch/tabng-switch.component';
 
 
 
@@ -31,7 +32,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     TodoCRUDComponent,
     StdCRUDComponent,
     TwowaytodoComponent,
-    StdTwowayComponent
+    StdTwowayComponent,
+    TabngSwitchComponent
   ],
   imports: [
     BrowserModule,

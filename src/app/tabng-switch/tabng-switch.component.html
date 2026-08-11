@@ -1,0 +1,109 @@
+<h2 class="text-center mb-5 text-danger"><strong class="border-bottom border-danger">TAB (ngSwitch)</strong></h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ul nav nav-pills">
+                <li class="nav-item"
+                (click)="onclick('node')">
+                    <a href="javascript:;" class="nav-link"
+                    [ngClass]="{active : selectedTab.toLowerCase().includes('node')}">
+                        Node
+                    </a>
+                </li>
+                <li class="nav-item"
+                (click)="onclick('angular')">
+                    <a href="javascript:;" class="nav-link"
+                    [ngClass]="{active : selectedTab.toLowerCase().includes('angular')}">
+                        Angular
+                    </a>
+                </li>
+                <li class="nav-item"
+                (click)="onclick('mongodb')">
+                    <a href="javascript:;" class="nav-link"
+                    [ngClass]="{active : selectedTab.toLowerCase().includes('mongodb')}">
+                        MongoDb
+                    </a>
+                </li>
+                <li class="nav-item"
+                (click)="onclick('javascript')">
+                    <a href="javascript:;" class="nav-link"
+                    [ngClass]="{active : selectedTab.toLowerCase().includes('javascript')}">
+                        Javascript
+                    </a>
+                </li>
+                <li class="nav-item"
+                (click)="onclick('html')">
+                    <a href="javascript:;" class="nav-link"
+                    [ngClass]="{active : selectedTab.toLowerCase().includes('html')}">
+                        Html
+                    </a>
+                </li>
+            </div>
+
+            <hr>
+
+            <div class="card" [ngSwitch]="selectedTab.toLowerCase()">
+                <div class="card-body"
+                *ngSwitchCase="'node'">
+                    <strong class="text-danger">Node</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam consequatur nemo. 
+                    iste perspiciatis magnam ut dolorem possimus animi cumque laudantium nam praesentium
+                </div>
+
+                <div class="card-body"
+                *ngSwitchCase="'angular'">
+                    <strong class="text-danger">Angular</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam consequatur nemo. 
+                    iste perspiciatis magnam ut dolorem possimus animi cumque laudantium nam praesentium
+                </div>
+
+                <div class="card-body"
+                *ngSwitchCase="'mongodb'">
+                    <strong class="text-danger">MongoDb</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam consequatur nemo. 
+                    iste perspiciatis magnam ut dolorem possimus animi cumque laudantium nam praesentium
+                </div>
+
+                <div class="card-body"
+                *ngSwitchCase="'javascript'">
+                    <strong class="text-danger">Javascript</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam consequatur nemo. 
+                    iste perspiciatis magnam ut dolorem possimus animi cumque laudantium nam praesentium
+                </div>
+
+                <div class="card-body"
+                *ngSwitchCase="'html'">
+                    <strong class="text-danger">Html</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam consequatur nemo. 
+                    iste perspiciatis magnam ut dolorem possimus animi cumque laudantium nam praesentium
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<hr class="bg-primary">
+
+<h2 class="text-center mb-5 text-danger"><strong class="border-bottom border-danger">TAB (ngFor)</strong></h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ul nav nav-pills">
+                <li class="nav-item"
+                *ngFor="let skill of skillsArr">
+                    <a href="javascript:;" class="nav-link"
+                    (click)="onskilltab(skill.tabHeading)"
+                    [ngClass]="{active :  selectedSkill.toLowerCase() == skill.tabHeading.toLowerCase()}"
+                    >{{skill.tabHeading | titlecase}}</a>
+                </li>
+                <hr>
+
+                <div class="card">
+                    <div *ngFor="let skill of skillsArr">
+                        <div class="card-body"
+                    [innerHtml]="skill.tabContent"
+                    *ngIf="selectedSkill === skill.tabHeading"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
