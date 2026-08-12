@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { StdTwowayComponent } from './std-twoway/std-twoway.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { TabngSwitchComponent } from './tabng-switch/tabng-switch.component';
+import { PracticetabComponent } from './practicetab/practicetab.component';
 
 
 
@@ -33,7 +34,8 @@ import { TabngSwitchComponent } from './tabng-switch/tabng-switch.component';
     StdCRUDComponent,
     TwowaytodoComponent,
     StdTwowayComponent,
-    TabngSwitchComponent
+    TabngSwitchComponent,
+    PracticetabComponent
   ],
   imports: [
     BrowserModule,

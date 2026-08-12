@@ -1,0 +1,25 @@
+<h2 class="text-center mb-5 text-danger"><strong class="border-bottom border-danger">TAB Practice</strong></h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ul nav nav-pills">
+                <li class="nav-item"
+                *ngFor="let skill of skillsArr">
+                    <a href="javascript:;" class="nav-link"
+                    (click)="onTab(skill.tabHeading)"
+                    [class.active]="selectedSkill.toLowerCase() == skill.tabHeading.toLowerCase()">{{skill.tabHeading}}</a>
+                </li>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="card">
+        <div *ngFor="let skills of skillsArr">
+            <div class="card-body"
+            [innerHTML]="skills.tabContent"
+            *ngIf="selectedSkill === skills.tabHeading"></div>
+        </div>
+    </div>
+</div>
+
