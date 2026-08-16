@@ -19,6 +19,8 @@ import { StdTwowayComponent } from './std-twoway/std-twoway.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { TabngSwitchComponent } from './tabng-switch/tabng-switch.component';
 import { PracticetabComponent } from './practicetab/practicetab.component';
+import { MobileCardComponent } from './mobile-card/mobile-card.component';
+import { LoweCaseDirective } from './lowe-case.directive';
 
 
 
@@ -35,7 +37,9 @@ import { PracticetabComponent } from './practicetab/practicetab.component';
     TwowaytodoComponent,
     StdTwowayComponent,
     TabngSwitchComponent,
-    PracticetabComponent
+    PracticetabComponent,
+    MobileCardComponent,
+    LoweCaseDirective
   ],
   imports: [
     BrowserModule,
